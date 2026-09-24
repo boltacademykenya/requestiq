@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "sync_runs_one_running_per_integration" ON "sync_runs" USING btree ("integration_id") WHERE "sync_runs"."status" = 'RUNNING';

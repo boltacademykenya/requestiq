@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1789891476156,
+      "tag": "0000_dark_madripoor",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1789906165183,
+      "tag": "0001_powerful_earthquake",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1789983966932,
+      "tag": "0002_real_james_howlett",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1789986391341,
+      "tag": "0003_bent_shaman",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1790132413485,
+      "tag": "0004_customer_sources",
+      "breakpoints": true
+    }
+  ]
+}

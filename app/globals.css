@@ -1,0 +1,235 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /*
+   * Soft UI tokens.
+   *
+   * The product separates surfaces with tone and elevation rather than with
+   * hairlines: `canvas` is the page tone, `wash` is the translucent ink fill
+   * used for inputs and quiet areas, and the shadows carry the hierarchy.
+   */
+  --color-canvas: #f5f8f6;
+  --color-wash: rgb(15 23 42 / 0.045);
+  --color-wash-strong: rgb(15 23 42 / 0.08);
+  --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 14px 32px -22px rgb(15 23 42 / 0.3);
+  --shadow-lift: 0 2px 6px -2px rgb(15 23 42 / 0.06), 0 30px 60px -30px rgb(15 23 42 / 0.35);
+  --shadow-header: 0 16px 30px -28px rgb(15 23 42 / 0.6);
+
+  /*
+   * Marketing "print" language.
+   *
+   * The home page speaks a warmer dialect of the same system: paper instead
+   * of canvas, a deep pine ink, a clay accent, and hard offset shadows that
+   * read like a two colour screenprint rather than software chrome.
+   */
+  --color-paper: #fbf9f3;
+  --color-paper-deep: #f4ecdc;
+  --color-ink: #10201f;
+  --color-ink-soft: #55625f;
+  --color-pine: #0b5c49;
+  --color-pine-deep: #083f34;
+  --color-pine-night: #062e26;
+  --color-clay: #e2713b;
+  --color-clay-deep: #bf5525;
+  --color-clay-soft: #f8c9ac;
+  --color-clay-wash: #fdeade;
+  --font-display: var(--font-archivo), 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --shadow-print: 6px 6px 0 0 #f8c9ac, 12px 12px 0 0 #e2713b;
+  --shadow-print-pine: 6px 6px 0 0 #cfe3db, 12px 12px 0 0 #0b5c49;
+  --shadow-capsule: 0 14px 34px -14px rgb(4 36 30 / 0.65);
+}
+
+:root {
+  color-scheme: light;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/*
+ * ReorderIQ renders one light theme. Keeping the palette single makes the
+ * "natural" surfaces predictable: a canvas tone, white cards, ink washes.
+ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  ::selection {
+    background-color: rgb(16 185 129 / 0.18);
+  }
+}
+
+/*
+ * Surface primitives
+ *
+ * Three shapes carry the whole product:
+ *   .surface — the raised card (no stroke, separation comes from the shadow)
+ *   .well    — a quiet inset area: form blocks, toolbars, empty states
+ *   .field   — a filled text field; the fill marks the hit area and focus
+ *              swaps to a soft ring instead of an outline
+ *
+ * Marketing pages add a warmer dialect on top of these: paper tones, clay
+ * accents and the display/mark/print-text type helpers defined at the end of
+ * this layer.
+ */
+@layer components {
+  .surface {
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: var(--shadow-soft, 0 1px 2px rgb(15 23 42 / 0.04), 0 14px 32px -22px rgb(15 23 42 / 0.3));
+  }
+
+  .well {
+    border-radius: 14px;
+    background-color: rgb(15 23 42 / 0.045);
+  }
+
+  .field {
+    border-radius: 12px;
+    background-color: rgb(15 23 42 / 0.045);
+    color: oklch(0.208 0.042 265.755);
+    transition: background-color 150ms ease, box-shadow 150ms ease;
+  }
+  .field::placeholder {
+    color: rgb(100 116 139 / 0.85);
+  }
+  .field:hover {
+    background-color: rgb(15 23 42 / 0.08);
+  }
+  .field:focus,
+  .field:focus-visible {
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(4 120 87 / 0.14);
+    outline: none;
+  }
+
+  /*
+   * Marketing type helpers.
+   *
+   * These three carry the "printed poster" dialect the home page speaks:
+   *   .display    — Archivo at the wide end of its axis, set tight like signage
+   *   .mark       — a soft clay swipe behind the words that matter
+   *   .print-text — a soft shadow so hero copy stays legible over artwork
+   */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-variation-settings: 'wdth' 106;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  .mark {
+    /*
+     * The swipe is a paint layer rather than a background-color.
+     *
+     * An inline box is as tall as the font's ascent + descent (≈1.2em), so a
+     * plain background-color paints a slab that sits well above the descenders.
+     * Painting the same tone as a sized, vertically nudged layer instead keeps
+     * the swipe from cap height to just past the baseline (measured: baseline
+     * + 0.12em, so descenders poke out the bottom) at any font size, and it
+     * still clones correctly when the phrase wraps across lines.
+     *
+     * `font-style: italic` resolves to the display face's real italic (see the
+     * Archivo loader on the home page), which keeps the swiped phrase on the
+     * same width axis as the heading around it.
+     */
+    --mark-band: 0.95em;
+    background-image: linear-gradient(var(--color-clay-soft, #f8c9ac), var(--color-clay-soft, #f8c9ac));
+    background-repeat: no-repeat;
+    background-size: 100% var(--mark-band);
+    background-position: 0 calc(50% + 0.11em);
+    border-radius: 0.14em;
+    color: var(--color-ink, #10201f);
+    font-style: italic;
+    padding: 0 0.16em;
+    /*
+     * Words sitting on the swipe are on a solid light plate, so they need no
+     * legibility halo — and an inherited one (the hero carries `print-text`)
+     * would smear the plate a shade or two darker than the sections on paper.
+     */
+    text-shadow: none;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .print-text {
+    text-shadow: 0 10px 38px rgb(4 36 30 / 0.6);
+  }
+}
